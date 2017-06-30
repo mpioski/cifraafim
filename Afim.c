@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <locale.h>
-#include <math.h>
 
 void cod (char pPalavra[30], int pChaveA, int pChaveB);
 void decod (char pPalavra[30], int pChaveA, int pChaveB);
@@ -57,15 +56,15 @@ void cod (char pPalavra[30], int pChaveA, int pChaveB){
 	int c[30];
 	
 	if (cont == 0){
-	printf("A palavra codificada é: ");
+	printf("A palavra codificada Ã©: ");
 	}
-	for (i = 0; i < 26; i++){		// Laço para o alfabeto
+	for (i = 0; i < 26; i++){		// LaÃ§o para o alfabeto
 		alfa[i] = i + 97;
 	}
 	for (i = 0; i < 30; i++){
 		c[i] = ' ';
 	}
-	for (j = 0; j < 30; j++){				// Laço para a codificação
+	for (j = 0; j < 30; j++){				// LaÃ§o para a codificaÃ§Ã£o
 		for (i = 0; i < 26; i++){
 			if (pPalavra[j] == alfa[i]){
 				c[j] = (pChaveA*i+pChaveB) % 26;
@@ -73,7 +72,7 @@ void cod (char pPalavra[30], int pChaveA, int pChaveB){
 			}
 		}
 	}	
-	for (j = 0; j < 30; j++){		// Laço para printar na tela o resultado
+	for (j = 0; j < 30; j++){		// LaÃ§o para printar na tela o resultado
 		for (i = 0; i < 26; i++){
 			if (c[j] == i){
 				printf("%c", alfa[i]);
@@ -89,22 +88,22 @@ void decod (char pPalavra[30], int pChaveA, int pChaveB){
 	float inv;
 	
 	if (cont == 0){
-	printf("A palavra decodificada é: ");
+	printf("A palavra decodificada Ã©: ");
 	}
-	for (i = 0; i < 26; i++){		// Laço para o alfabeto
+	for (i = 0; i < 26; i++){		// LaÃ§o para o alfabeto
 		alfa[i] = i + 97;
 	}
 	for (i = 0; i < 30; i++){
 		c[i] = ' ';
 	}
-	for (j = 0; j < 30; j++){		// Laço para a codificação
+	for (j = 0; j < 30; j++){		// LaÃ§o para a codificaÃ§Ã£o
 		for (i = 0; i < 26; i++){
 			if (pPalavra[j] == alfa[i]){
 				for (k = 0; k < 30; k++){
 					if (cont2 == 0){
-						inv = (float)((k*26) + 1) / pChaveA;		// Cálculo do inverso
+						inv = (float)((k*26) + 1) / pChaveA;		// CÃ¡lculo do inverso
 					}
-					if (inv == (int)inv){		// Condição para para pegar o primeiro número inteiro
+					if (inv == (int)inv){		// CondiÃ§Ã£o para para pegar o primeiro nÃºmero inteiro
 						c[j] = (int)inv*(i - pChaveB) % 26;
 						cont = 1;
 						cont2 = 1;
@@ -116,7 +115,7 @@ void decod (char pPalavra[30], int pChaveA, int pChaveB){
 			}
 		}
 	}	
-	for (j = 0; j < 30; j++){		// Laço para printar na tela o resultado
+	for (j = 0; j < 30; j++){		// LaÃ§o para printar na tela o resultado
 		for (i = 0; i < 26; i++){
 			if (c[j] == i){
 				printf("%c", alfa[i]);
